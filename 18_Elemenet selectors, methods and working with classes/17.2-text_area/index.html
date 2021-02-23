@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    body{
+      padding: 50px;
+    }
+    #text-area{
+      height: 100px;
+      width: 300px;
+      display: block;
+    }
+    button{
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <p>Lorem ipsum dolor sit amet consectetur.</p>
+  <form>
+    <textarea id="text-area" name="comment"></textarea>
+  </form>
+  <button onclick="checkTextArea()">Click Here!</button>
+  <script>
+    function checkTextArea() {
+      const text = document.querySelector('#text-area').value;
+      if (text.length < 100) {
+        const alert = document.createElement('p');
+        alert.textContent = '*Text should be at least 100 characters';
+        document.body.appendChild(alert);
+      } else {
+        const store = text;
+        document.querySelector('#text-area').value = '';
+      }
+    }
+  </script>
+</body>
+</html>

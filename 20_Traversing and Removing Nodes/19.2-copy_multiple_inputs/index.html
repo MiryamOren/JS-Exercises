@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      text-align: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .digits{
+      margin: 20px;
+    }
+    .digit{
+      width: 30px;
+      height: 30px;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>Text to copy</h1>
+  <h3>123456</h3>
+  <form action="">
+    <div class="digits">
+      <input type="text" class="digit" maxlength="1">
+      <input type="text" class="digit" maxlength="1">
+      <input type="text" class="digit" maxlength="1">
+      <input type="text" class="digit" maxlength="1">
+      <input type="text" class="digit" maxlength="1">
+      <input type="text" class="digit"maxlength="1">
+    </div>
+    
+    <input type="submit" value="Verify">
+  </form>
+  <script>
+    const form = document.querySelector('form');
+    const inputs = document.querySelectorAll('.digits > .digit');
+    const submit = document.querySelector("input[type='submit']");
+
+    const handleInput = (e) => {
+      const input = e.target;
+      if (input.value && input.nextElementSibling) {
+        input.nextElementSibling.focus();
+      }
+      if (inputs[inputs.length - 1].value) {
+        submit.click();
+      }
+    };
+    form.addEventListener('input', handleInput);
+
+    const handlePaste = (e) => {
+      const paste = e.clipboardData.getData('text');
+      console.log(inputs);
+
+      inputs.forEach((input, index) => {
+        input.value = paste[index] || '';
+      });
+
+      inputs[paste.length - 1].focus();
+    };
+    inputs[0].addEventListener('paste', handlePaste);
+  </script>
+</body>
+</html>

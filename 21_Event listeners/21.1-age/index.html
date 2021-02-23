@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    body{
+      max-width: 500px;
+      margin: auto;
+      text-align: center;
+      padding: 20px;
+    }
+    label{
+      display: block;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <label for="">How old are you?</label>
+  <input type="text">
+  <button type="submit">Submit</button>
+  <script>
+    document.querySelector('button').addEventListener('click', () => {
+      const age = parseInt(document.querySelector('input').value);
+      if (!age) {
+        alert('Please enter a number');
+        return;
+      }
+      const msg = document.createElement('p');
+      if (age >= 18) {
+        msg.textContent = 'you can drink appear';
+      } else {
+        msg.textContent = 'you’re too young';
+      }
+      document.body.appendChild(msg);
+    });
+  </script>
+</body>
+</html>

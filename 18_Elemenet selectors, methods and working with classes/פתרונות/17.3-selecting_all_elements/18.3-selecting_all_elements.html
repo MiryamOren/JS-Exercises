@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="myFirstDiv">hi</div>
+    <div id="mySecondDiv"></div>
+    <div id="myThridDiv"></div>
+    <div id="myFourthDiv"></div>
+
+    <script>
+      const myFirstDiv = document.querySelector("#myFirstDiv");
+      const mySecondDiv = document.querySelector("#mySecondDiv");
+      const myThirdDiv = document.querySelector("#myThirdDiv");
+      const myFourthDiv = document.querySelector("#myFourthDiv");
+      console.log(myFirstDiv);
+      const all = document.querySelectorAll("div");
+      //if you know how many elements there will be
+      const [a, b, c, d] = [...all];
+
+      //if you don't know how many elements there will be
+      const elements = new Map();
+      all.forEach((el) => {
+        elements.set(el.id, el);
+      });
+      console.log(elements.get("myFirstDiv"));
+    </script>
+  </body>
+</html>

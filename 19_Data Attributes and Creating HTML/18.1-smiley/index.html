@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    form{
+      width: 400px;
+      margin: auto;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin: 20px;
+    }
+    .smileys-container{
+      width: 400px;
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: repeat(4, 100px);
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+    <label for="">How many smileys do you want to see?</label>
+    <input type="text">
+    <button type="button">Submit</button>
+  </form>
+  <div class="smileys-container"></div>
+  <script>
+        function addSmileys() {
+          const numOfsmileys = parseInt(document.querySelector('input').value);
+          if (numOfsmileys.isNan) {
+            alert('Not a number');
+          } else {
+            if (document.querySelector('img')) {
+              document.querySelector('.smileys-container').innerHTML = '';
+            }
+            console.log('addSmileys', numOfsmileys);
+            for (let i = 0; i < numOfsmileys; i++) {
+              const smiley = document.createElement('img');
+              smiley.src = './Smiley.jpg';
+              smiley.height = '100';
+              document.querySelector('.smileys-container').appendChild(smiley);
+            }
+          }
+        }
+        console.log('hiii');
+        const button = document.querySelector('button');
+        button.addEventListener('click', addSmileys);
+  </script>
+</body>
+</html>
