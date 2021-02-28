@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    body{
+      max-width: 600px;
+      margin: 50px auto;
+      text-align: center;
+    }
+    body > div{
+      margin-bottom: 40px;
+    }
+    .current-letter__letter{
+      display: inline-block;
+      border: solid 2px black;
+      padding: 10px 15px;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome To Guess My Letter</h1>
+  <div class="current-letter">
+    <div class="current-letter__letter">?</div>
+    <div class="current-letter__directive">Guess a letter</div>
+  </div>
+  <div class="letter-guessed">
+    <div class="letter-guessed__labal">Keys gussed</div>
+    <div class="letter-guessed__letters"></div>
+  </div>
+  <script>
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    func;
+    document.addEventListener('keydown', (event) => {
+      const keyName = event.key;
+      console.log(keyName === 'g');
+    });
+  </script>
+</body>
+</html>

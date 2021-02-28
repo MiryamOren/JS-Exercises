@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img{
+      width: 100vw;
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+  <input type="checkbox" name="" id="">
+  <img src="https://www.gardeningknowhow.com/wp-content/uploads/2020/12/lonely-japanese-cherry.jpg" alt="">
+</body>
+<script>
+  const img = document.querySelector('img');
+  const checkbox = document.querySelector('input');
+  checkbox.addEventListener('change', function () {
+    if (this.checked) {
+      console.log('Checkbox is checked..');
+      img.style.visibility = 'visible';
+    } else {
+      console.log('Checkbox is not checked..');
+      img.style.visibility = 'hidden';
+    }
+  });
+</script>
+</html>
